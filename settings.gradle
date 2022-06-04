@@ -1,0 +1,10 @@
+include ':app'
+rootProject.name = "NoteApp"
+include ':notes'
+include ':noteDetails'
+include ':navigationImplementation'
+include ':design'
+include ':domain'
+include ':data'
+include ':navigation'
+include ':testResources'

@@ -1,0 +1,40 @@
+<resources>
+    <style name="Theme.NoteApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/active_items</item>
+        <item name="colorSecondary">@color/active_items</item>
+
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/active_items</item>
+    </style>
+
+    <style name="Body">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/active_items</item>
+    </style>
+
+    <style name="Label">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/active_items_60</item>
+    </style>
+
+    <style name="TextInput" />
+    <style name="TextInput.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/active_items</item>
+    </style>
+
+    <style name="TextInput.TextInputEditText">
+        <item name="hintTextColor">@color/active_items</item>
+        <item name="android:textColorHint">@color/active_items</item>
+        <item name="android:textColor">@color/active_items</item>
+        <item name="android:textAppearance">@style/Body</item>
+    </style>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationContentDescription="@string/back_button_accessibility_label"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/active_items">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="12dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/save"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/active_items"
+                android:contentDescription="@string/delete_note_accessibility_label"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="12dp"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/active_items"
+                android:contentDescription="@string/save_note_accessibility_label"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInput.Outlined"
+        android:id="@+id/title_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="@string/title"
+        android:labelFor="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="@string/title"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/image_url"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInput.Outlined"
+        android:id="@+id/image_url_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/image_url"
+        android:labelFor="@id/image_url"
+        app:layout_constraintEnd_toEndOf="@id/title_input_layout"
+        app:layout_constraintStart_toStartOf="@id/title_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/title_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/image_url"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="@string/image_url"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/description"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInput.Outlined"
+        android:id="@+id/description_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/description"
+        android:labelFor="@id/description"
+        app:layout_constraintEnd_toEndOf="@id/image_url_input"
+        app:layout_constraintStart_toStartOf="@id/image_url_input"
+        app:layout_constraintTop_toBottomOf="@id/image_url_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/description"
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/description"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:maxLines="10"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

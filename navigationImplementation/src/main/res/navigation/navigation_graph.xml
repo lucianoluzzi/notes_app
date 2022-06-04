@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="nl.com.lucianoluzzi.notes.ui.NotesFragment"
+        android:label="NotesFragment" >
+        <action
+            android:id="@+id/action_notesFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="nl.com.lucianoluzzi.notedetails.ui.NoteDetailFragment"
+        android:label="NoteDetailFragment" >
+        <argument
+            android:name="noteId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>

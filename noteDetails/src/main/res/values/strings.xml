@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="delete_note_accessibility_label">Delete note</string>
+    <string name="save_note_accessibility_label">Save note</string>
+    <string name="title">Title</string>
+    <string name="image_url">Image URL</string>
+    <string name="description">Description</string>
+    <string name="back_button_accessibility_label">Back</string>
+</resources>

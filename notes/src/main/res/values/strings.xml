@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="note_item_accessibility_label">Note number %1$s. Title: %2$s</string>
+    <string name="create_note_accessibility_label">Create note</string>
+    <string name="notes_error_message">We had a problem showing your previous notes, please try again later.</string>
+</resources>

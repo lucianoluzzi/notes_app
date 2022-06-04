@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="yellow_600">#fdd835</color>
+
+    <color name="off_white">#EFEBE0</color>
+    <color name="off_white_60">#99EFEBE0</color>
+    <color name="charcoal">#36454F</color>
+    <color name="charcoal_60">#9936454F</color>
+
+    <color name="active_items">@color/charcoal</color>
+    <color name="active_items_60">@color/charcoal_60</color>
+
+    <color name="background">@color/off_white</color>
+</resources>
