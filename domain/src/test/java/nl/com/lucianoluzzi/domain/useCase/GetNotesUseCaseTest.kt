@@ -132,13 +132,16 @@ internal class GetNotesUseCaseTest {
         }
 
         @Test
-        fun `then returned flow is the same as noteMapper result ordered by date descending`() =
+        fun `then returned flow is the same as noteMapper result ordered by date descending and filter by search keyword`() =
             runTest {
-                val expectedResult = noteList.sortedByDescending {
+                val searchQuery = "first"
+                val expectedResult = noteList.filter {
+                    it.title.contains(searchQuery) || it.description.contains(searchQuery)
+                }.sortedByDescending {
                     it.createdAtDate
                 }
                 val notesResult = mutableListOf<Note>()
-                val response = noteUseCase()
+                val response = noteUseCase(searchQuery)
                 if (response is Response.Success) {
                     response.data?.collect {
                         notesResult.addAll(it)

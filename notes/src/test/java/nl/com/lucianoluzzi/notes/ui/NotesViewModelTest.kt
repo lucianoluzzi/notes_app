@@ -65,7 +65,7 @@ internal class NotesViewModelTest {
             @BeforeEach
             private fun setUpTests() {
                 val emptyListFlow = flowOf(emptyList<Note>())
-                whenever(getNotesUseCase("")).thenReturn(
+                whenever(getNotesUseCase()).thenReturn(
                     Response.Success(emptyListFlow)
                 )
             }
@@ -122,7 +122,7 @@ internal class NotesViewModelTest {
             @BeforeEach
             private fun setUpTests() {
                 val notesFlow = flowOf(notes)
-                whenever(getNotesUseCase("")).thenReturn(
+                whenever(getNotesUseCase()).thenReturn(
                     Response.Success(notesFlow)
                 )
                 whenever(noteUiMapper.mapNotesToNoteUiModelList(any())).thenReturn(noteUiList)
@@ -157,7 +157,7 @@ internal class NotesViewModelTest {
         inner class Error {
             @Test
             fun `then emits NotesState Error`() {
-                whenever(getNotesUseCase("")).thenReturn(Response.Error())
+                whenever(getNotesUseCase()).thenReturn(Response.Error())
 
                 val viewModel = NotesViewModel(
                     noteUiMapper = noteUiMapper,

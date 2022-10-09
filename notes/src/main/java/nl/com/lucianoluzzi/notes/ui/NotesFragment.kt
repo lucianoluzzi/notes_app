@@ -61,7 +61,6 @@ class NotesFragment(
         search.doOnSearchAction { searchText ->
             viewModel.fetchNotes(searchText)
         }
-
     }
 
     private fun handleNotesListState(notesListState: NotesState.NotesList) {

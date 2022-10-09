@@ -13,7 +13,7 @@ class GetNotesUseCase(
     private val noteRepository: NoteRepository,
     private val noteMapper: NoteMapper,
 ) {
-    operator fun invoke(searchQuery: String): Response<Flow<List<Note>>> {
+    operator fun invoke(searchQuery: String = ""): Response<Flow<List<Note>>> {
         return try {
             val flowOfNotes = noteRepository.getNotes().map { noteEntityList ->
                 noteMapper.mapNoteEntityListToNoteList(noteEntityList).filter {
