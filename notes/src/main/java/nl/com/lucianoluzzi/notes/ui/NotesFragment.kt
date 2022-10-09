@@ -1,7 +1,6 @@
 package nl.com.lucianoluzzi.notes.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -60,8 +59,9 @@ class NotesFragment(
         }
 
         search.doOnSearchAction { searchText ->
-            Log.i("TAG", "onQueryTextSubmit: $searchText")
+            viewModel.fetchNotes(searchText)
         }
+
     }
 
     private fun handleNotesListState(notesListState: NotesState.NotesList) {

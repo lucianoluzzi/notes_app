@@ -28,13 +28,17 @@ class NotesViewModel(
     val notesState: LiveData<NotesState> = _notesState
 
     init {
+        fetchNotes()
+    }
+
+    fun fetchNotes(searchQuery: String = "") {
         viewModelScope.launch {
-            emitNotes()
+            emitNotes(searchQuery)
         }
     }
 
-    private suspend fun emitNotes() {
-        when (val response = getNotesUseCase()) {
+    private suspend fun emitNotes(searchQuery: String) {
+        when (val response = getNotesUseCase(searchQuery)) {
             is Response.Error -> _notesState.value = NotesState.Error
             is Response.Success -> {
                 response.data?.collect { notes ->
