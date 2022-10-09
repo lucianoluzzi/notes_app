@@ -1,11 +1,13 @@
 package nl.com.lucianoluzzi.notes.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import nl.com.lucianoluzzi.design.extensions.doOnSearchAction
 import nl.com.lucianoluzzi.design.extensions.dp
 import nl.com.lucianoluzzi.design.extensions.viewBinding
 import nl.com.lucianoluzzi.navigation.Navigator
@@ -55,6 +57,10 @@ class NotesFragment(
         )
         if (notes.itemDecorationCount == 0) {
             notes.addItemDecoration(GridSpacingItemDecoration(8.dp))
+        }
+
+        search.doOnSearchAction { searchText ->
+            Log.i("TAG", "onQueryTextSubmit: $searchText")
         }
     }
 
